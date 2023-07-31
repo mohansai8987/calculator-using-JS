@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<style>
+    body
+    {
+        background-color: cyan;
+    }
+    td
+    {
+    text-align: center;
+    padding: 3px;
+    }
+    .form
+    {
+        width: 188px;
+        margin: 50px auto ;
+        border:2px solid black;
+        background-color:blue;
+        text-align: center;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="form">
+        <h1>Calculator</h1>
+        <hr>
+        <form action="" method="post" name="myform" class="cal" >
+            <table>
+                <tr>
+                    <td colspan="4"><input text="text" id="ip" name="r"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1"  onclick="document.myform.r.value+='1'"></td>
+                    <td><input type="button" value="2"  onclick="document.myform.r.value+='2'"></td>
+                    <td><input type="button" value="3"  onclick="document.myform.r.value+='3'"></td>
+                    <td><input type="button" value="+"  onclick="document.myform.r.value+='+'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="document.myform.r.value+='4'"></td>
+                    <td><input type="button" value="5" onclick="document.myform.r.value+='5'"></td>
+                    <td><input type="button" value="6" onclick="document.myform.r.value+='6'"></td>
+                    <td><input type="button" value="-" onclick="document.myform.r.value+='-'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="document.myform.r.value+='7'"></td>
+                    <td><input type="button" value="8" onclick="document.myform.r.value+='8'"></td>
+                    <td><input type="button" value="9" onclick="document.myform.r.value+='9'"></td>
+                    <td><input type="button" value="*" onclick="document.myform.r.value+='*'"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="C"></td>
+                    <td><input type="button" value="0" onclick="document.myform.r.value+='0'"></td>
+                    <td><input type="button" value="=" onclick="document.myform.r.value=eval(document.myform.r.value)"></td>
+                    <td><input type="button" value="/" onclick="document.myform.r.value+='/'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="D" onclick="del()"></td>
+                    <td><input type="button" value="(" onclick="document.myform.r.value+='('"></td>
+                    <td><input type="button" value=")" onclick="document.myform.r.value+=')'"></td>
+                    <td><input type="button" value="." onclick="document.myform.r.value+='.'"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function del()
+        {
+            var str=document.getElementById("ip").value
+            var str1=str.slice(0,-1)
+            document.getElementById("ip").value=str1
+        }
+    </script>
+</body>
+</html>
